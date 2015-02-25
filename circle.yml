@@ -37,4 +37,4 @@ test:
     # Check if php command works as expected
     - docker run -ti million12/nginx-hhvm "php -v"
     - docker run -ti million12/nginx-hhvm "php -v" | grep "HipHop VM"
-    - docker run -ti million12/nginx-hhvm "php -r \"var_dump(ini_get('date.timezone');\"" | grep "GMT"
+    - docker run -ti million12/nginx-hhvm "php -r \"var_dump(ini_get('date.timezone'));\"" | grep GMT
