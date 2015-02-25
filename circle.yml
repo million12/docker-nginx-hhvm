@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - docker info && docker version
+    - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD --email=$DOCKER_HUB_EMAIL
     
   override:
     - docker pull million12/nginx:latest
@@ -38,3 +39,12 @@ test:
     - docker run -ti million12/nginx-hhvm "php -v"
     - docker run -ti million12/nginx-hhvm "php -v" | grep "HipHop VM"
     - docker run -ti million12/nginx-hhvm "php -r \"var_dump(ini_get('date.timezone'));\"" | grep GMT
+
+
+# Due to timeouts when building this image Docker Hub, it cannot be build there.
+# Therefore we have to push it manually from here...
+deployment:
+  push_built_image_to_docker_hub:
+    branch: master
+    commands: 
+      - docker push million12/nginx-hhvm
