@@ -35,6 +35,6 @@ test:
     - curl -s --show-error http://localhost:8080/hhvminfo.php?EXTENSIONS | grep 'zlib'
     
     # Check if php command works as expected
-    - docker run -ti --volumes-from nginx million12/nginx-hhvm "php -v"
-    - docker run -ti --volumes-from nginx million12/nginx-hhvm "php -v" | grep "HipHop VM"
-    - docker run -ti --volumes-from nginx million12/nginx-hhvm "php -r 'var_dump(123);'" | grep "int(123)"
+    - docker run -ti million12/nginx-hhvm "php -v"
+    - docker run -ti million12/nginx-hhvm "php -v" | grep "HipHop VM"
+    - docker run -ti million12/nginx-hhvm "php -r \"var_dump(ini_get('date.timezone');\"" | grep "GMT"

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-hhvm --php $@
+hhvm --php -c /etc/hhvm/php-cli.ini $@
