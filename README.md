@@ -1,5 +1,5 @@
 # Nginx + HHVM docker container
-[![Circle CI](https://circleci.com/gh/million12/nginx-hhvm.svg?style=svg)](https://circleci.com/gh/million12/nginx-hhvm)
+[![Circle CI](https://circleci.com/gh/million12/docker-nginx-hhvm.svg?style=svg)](https://circleci.com/gh/million12/docker-nginx-hhvm)
 
 This is a [million12/nginx-hhvm](https://registry.hub.docker.com/u/million12/nginx-hhvm/) docker image with Nginx and HHVM.
 
