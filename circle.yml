@@ -8,13 +8,10 @@ dependencies:
     - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD --email=$DOCKER_HUB_EMAIL
     
   override:
-    - docker pull million12/nginx:latest
+    - docker build -t million12/nginx-hhvm .
 
 # Run tests
 test:
-  pre:
-    - docker build -t million12/nginx-hhvm .
-
   override:
     # Launch it
     - docker run -d -p 8080:80 --name nginx million12/nginx-hhvm
