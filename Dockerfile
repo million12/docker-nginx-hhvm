@@ -17,8 +17,8 @@ RUN \
   git clone https://github.com/facebook/hhvm --recursive /tmp/hhvm && \
   cd /tmp/hhvm && \
   
-  `# Lock dev-master version on 23rd Feb 2015` \
-  git checkout 4946bbe1fa50371fe8f49a7c5d38ea9ea02b4461 && \
+  `# Lock to HHVM-3.7.0 version (Apr 27, 2015)` \
+  git checkout HHVM-3.7.0 && \
   cmake \
     -DLIBMAGICKWAND_INCLUDE_DIRS="/usr/include/ImageMagick-6" \
     -DLIBMAGICKCORE_LIBRARIES="/usr/lib64/libMagickCore-6.Q16.so" \
