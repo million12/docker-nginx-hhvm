@@ -24,7 +24,7 @@ RUN \
     -DLIBMAGICKCORE_LIBRARIES="/usr/lib64/libMagickCore-6.Q16.so" \
     -DLIBMAGICKWAND_LIBRARIES="/usr/lib64/libMagickWand-6.Q16.so" \
     . && \
-  make && \
+  make -j$(($(nproc)+1)) && \
   ./hphp/hhvm/hhvm --version && \
   make install && \
   
